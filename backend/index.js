@@ -3,35 +3,40 @@
 // With the help from both NODE and it's framework EXPRESS we can create 
 // clean and readable code instead of writing more lines of code
 
-// Example of Node without Express: taken from https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction
-
-// Load HTTP module
-// const http = require("http");
-
-// const hostname = "127.0.0.1";
-// const port = 3000;
-
-// // Create HTTP server 
-// const server = http.createServer((req, res) => {
-
-//    // Set the response HTTP header with HTTP status and Content type
-//    res.writeHead(200, {'Content-Type': 'text/plain'});
-   
-//    // Send the response body "Hello World"
-//    res.end('Hello World\n');
-// });
-
-// // Prints a log once the server starts listening
-// server.listen(port, hostname, () => {
-//    console.log(`Server running at http://${hostname}:${port}/`);
-// })
+// Example of Node without Express: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction
 
 import express from 'express';
+import mongoose from 'mongoose';
+import bodyparser from 'body-parser';
+import cors from 'cors';
+import routes from '../backend/routes/datingRoutes'; // importing the routes from file datingRoutes from folder routes
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
-app.get('/', (req,res) => 
+// Mongo Connection - we are now connected to MongoDB and can use it however we like
+mongoose.Promise = global.Promise; 
+mongoose.connect('mongodb://localhost/soccerDB', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+
+// Body-Parser Setup 
+// used to transpile the request into something that mongo/database can understand
+app.use(bodyparser.urlencoded( { extended: true } ) ); // allows use to pass the request and encode it properly
+app.use(bodyparser.json()); 
+
+// CORS Setup
+app.use( cors() ); // cors stands for Cross Origin Resource Sharing 
+// allows restricted resources on a web page to be requested from another 
+// domain outside the domain from which the first resource was served
+
+routes(app);
+
+// EXPRESS ROUTING -------------------------------------->
+
+// we created the route '/'  with a callback function to run
+app.get('/', ( req, res ) => // when we have a REQUEST we want a RESPONSE --> ALWAYS DO IT THIS WAY
     res.send(`This is my dating app is on port ${PORT}`)
 )
 
