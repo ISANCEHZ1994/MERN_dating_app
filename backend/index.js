@@ -33,7 +33,7 @@ app.use( cors() ); // cors stands for Cross Origin Resource Sharing
 
 routes(app);
 
-// EXPRESS ROUTING -------------------------------------->
+// EXPRESS ROUTING ---------------------------------------->
 
 // we created the route '/'  with a callback function to run
 app.get('/', ( req, res ) => // when we have a REQUEST we want a RESPONSE --> ALWAYS DO IT THIS WAY
