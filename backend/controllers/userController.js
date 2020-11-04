@@ -34,7 +34,7 @@ export const getUserWithId = (req, res) => {
 };
 
 export const updateUser = (req, res) => {
-    User.findOneAndUpdate( {_id: req.params.PlayerId}, req.body, {new: true}, (err, User) => { // first we find the id that we want to update then (req.body)
+    User.findOneAndUpdate( {_id: req.params.UserId}, req.body, {new: true}, (err, User) => { // first we find the id that we want to update then (req.body)
         // we pass what we have as data in our body - I believe it means that all other data will be the same except for the data that is getting updating
         // the reason we put { new: true } is so that our updated player gets displayed and not the previous one
         if(err){

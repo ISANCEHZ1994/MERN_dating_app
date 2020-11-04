@@ -15,11 +15,11 @@ const routes = (app) => {
     .post(addNewUser);
 
     app.route('/user/:UserId')
-    // GET Specific Player
+    // GET Specific User
     .get(getUserWithId)
-    // UPDATE Specifc Player
+    // UPDATE Specifc User
     .put(updateUser)
-    // DELETE Specifc Player
+    // DELETE Specifc User
     .delete(deleteUser)
 }
 

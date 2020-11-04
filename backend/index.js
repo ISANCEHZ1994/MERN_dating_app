@@ -16,7 +16,7 @@ const PORT = 3001;
 
 // Mongo Connection - we are now connected to MongoDB and can use it however we like
 mongoose.Promise = global.Promise; 
-mongoose.connect('mongodb://localhost/soccerDB', {
+mongoose.connect('mongodb://localhost/datingDB', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });

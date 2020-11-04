@@ -14,12 +14,17 @@ export const UserSchema = new Schema({
     email: {
         type: String,
         required: true,
+        // unique: true, // not avaiable because we need to use npm i mongoose-unique-validator
     },
     phone: {
         type: Number, //   NOTICE NOT INTEGER
     },
-    createdDate: {
-        type: Date,
-        default: Date.now
-    }
+    // password:{
+    //     type: String,
+    //     required: true,
+    // },
+    date: {
+         type: Date, default: Date.now 
+    },
+    
 })
