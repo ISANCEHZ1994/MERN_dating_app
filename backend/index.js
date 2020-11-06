@@ -1,13 +1,12 @@
 // THIS IS OUR WEB SERVER!!
 
-// With the help from both NODE and it's framework EXPRESS we can create 
-// clean and readable code instead of writing more lines of code
+// With the help from both NODE and it's framework EXPRESS we can create clean and readable code instead of writing more lines of code
 
 // Example of Node without Express: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction
 
 import express from 'express';
 import mongoose from 'mongoose';
-import bodyparser from 'body-parser';
+import bodyparser from 'body-parser'; // I have heard that express does the same thing! - CONSIDER CHANGING 
 import cors from 'cors';
 import routes from '../backend/routes/datingRoutes'; // importing the routes from file datingRoutes from folder routes
 
@@ -26,8 +25,8 @@ mongoose.connect('mongodb://localhost/datingDB', {
 app.use(bodyparser.urlencoded( { extended: true } ) ); // allows use to pass the request and encode it properly
 app.use(bodyparser.json()); 
 
-// CORS Setup
-app.use( cors() ); // cors stands for Cross Origin Resource Sharing 
+// CORS (Cross Origin Resource Sharing) Setup
+app.use( cors() ); 
 // allows restricted resources on a web page to be requested from another 
 // domain outside the domain from which the first resource was served
 
