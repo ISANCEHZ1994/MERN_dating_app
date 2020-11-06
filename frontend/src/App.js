@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -6,6 +6,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
+//  Here is the directional where I want to set up where each component will go
 
 function App() {
   return (
