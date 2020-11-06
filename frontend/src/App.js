@@ -1,19 +1,21 @@
 import React from 'react';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import FirstPage from './Components/Welcome Page/FirstPage';
+import SignUpPage from './Components/Welcome Page/SignUpPage';
+import HomePage from './Components/Main Page/Home Page/HomePage';
 
 //  Here is the directional where I want to set up where each component will go
 
 function App() {
   return (
-    <div className="App">
-      this is the App.js
-    </div>
+   <BrowserRouter>
+   <Switch>
+      <Route path="/welcome-to-connections" component={FirstPage}/>
+      <Route path="/sign-up" component={SignUpPage}/>
+      <Route path="/main-page" component={HomePage}/>
+   </Switch>
+   </BrowserRouter>
   );
 }
 

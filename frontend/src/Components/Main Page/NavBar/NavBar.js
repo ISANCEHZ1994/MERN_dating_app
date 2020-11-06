@@ -1,5 +1,10 @@
 import React from 'react';
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    BrowserRouter
+  } from "react-router-dom";
 
 export default class NavBar extends React.Component{
 
@@ -17,3 +22,14 @@ export default class NavBar extends React.Component{
     }
 
 };
+
+
+// function NavBar(){
+//     return(
+//         <BrowserRouter>
+            
+//         </BrowserRouter>
+//     )
+// };
+
+// export default NavBar;
