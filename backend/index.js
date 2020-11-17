@@ -42,4 +42,3 @@ app.get('/', ( req, res ) => // when we have a REQUEST we want a RESPONSE --> AL
 app.listen(PORT, () => 
     console.log(`Our dating server is running on ${PORT}`)
 )
-

@@ -5,7 +5,7 @@ export default class FirstPage extends React.Component{
 
     state = { 
 
-    }
+    };
 
     render(){
         return(

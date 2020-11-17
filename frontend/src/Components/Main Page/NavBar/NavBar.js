@@ -1,49 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 
-
-// export default class NavBar extends React.Component{
-
-//     state = {
-
-//     }
-
-    
-
-//     goToProfile = () => {
-//         const 
-//     }
-
-//     render(){
-//         return(
-//             <div className='Navbar-div'>
-//                I want a directional NavBar that will take the user every where they want to go<br></br>
-//                How Perhaps this is doesnt need the react router browser? 
-//            <button> </button> 
-//            <button> </button>
-
-//             </div>
-//         )
-//     }
-
-// };
-
-
 function NavBar(){
+
+    // fetch('http://http://localhost:3001/')
+    // .then( resp = resp.json())
+    // .then( data = console.log(data))    
 
     const history = useHistory();
 
         function goToProfile(){
-
+            history.push('/profile-page')
         }
+
+        function goToChats(){
+            history.push('/chat-page')
+        }
+
+        function goToConnections(){
+            history.push('/connections-page')
+        }
+
+        function goToLove(){
+            history.push('/love-page')
+        }
+
+        function signOut(){
+            history.push('/welcome-to-connections')
+        }
+
 
     return(
 
         <div className='Navbar-div'>
-                I want a directional NavBar that will take the user every where they want to go<br></br>
-               How Perhaps this is doesnt need the react router browser? 
-            <button> </button> 
-            <button> </button>
+
+           <button type="button" onClick={goToLove}>LOVE</button> 
+            <button type="button" onClick={goToChats}> CHATS</button>
+            <button type="button" onClick={goToConnections}> CONNECTIONS </button>
+            <button type="button" onClick={goToProfile}> PROFILE </button> 
+            <button type="button" onClick={signOut}> SIGN OUT </button> 
 
         </div>
 

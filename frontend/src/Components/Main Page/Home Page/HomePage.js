@@ -13,7 +13,7 @@ export default class HomePage extends React.Component{
             <div>
                 <NavBar/>
 
-                This is what I want the user to see whenever they are  <br></br>
+                This is what I want the user to see whenever they sign back in   <br></br>
                 Here I want to make people sign up OR create an account
             </div>
         )
