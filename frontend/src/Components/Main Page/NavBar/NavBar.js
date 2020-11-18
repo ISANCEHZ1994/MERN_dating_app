@@ -3,9 +3,7 @@ import { useHistory } from "react-router-dom";
 
 function NavBar(){
 
-    // fetch('http://http://localhost:3001/')
-    // .then( resp = resp.json())
-    // .then( data = console.log(data))    
+    
 
     const history = useHistory();
 

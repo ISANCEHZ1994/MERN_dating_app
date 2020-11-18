@@ -7,7 +7,7 @@ import SignUpPage from './Components/Welcome Page/SignUpPage';
 import NavBar from './Components/Main Page/NavBar/NavBar';
 import Profile from './Components/Main Page/Users/Profile/Profile';
 import Chats from './Components/Main Page/Users/Chats/Chats';
-import Connections from './Components/Main Page/Users/Connections';
+import Connections from './Components/Main Page/Users/Connections/Connections';
 import Love from './Components/Main Page/Users/Love/Love';
 
 //  Here is the directional where I want to set up where each component will go
